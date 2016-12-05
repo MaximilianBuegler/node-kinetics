@@ -79,8 +79,29 @@ describe('Extract Vertical Component', function () {
     
 });
 
+describe('Rotate Signal', function () {
+    describe('Test 1', function () {
+        it('Should properly compute [[[1,2,3],[4,5,6],[7,8,9]],[[0,0,0],[0,0,0],[0,0,0]]', function () {
+            var rsig = kinetics.rotateSignal([[1,2,3],[4,5,6],[7,8,9]],[[0,0,0],[0,0,0],[0,0,0]]);
+            check(rsig,[ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ],0.001);
+        });
+    });
+    
+    describe('Test 2', function () {
+        it('Should properly compute [[[1,2,3],[4,5,6],[7,8,9]],[[Pi/2,0,0],[Pi/2,0,0],[Pi/2,0,0]]', function () {
+            var rsig = kinetics.rotateSignal([[1,2,3],[4,5,6],[7,8,9]],[[Math.PI/2,0,0],[0,Math.PI/2,0],[0,0,Math.PI/2]]);
+            check(rsig,[ [ 1, 3, -2 ], [ -6, 5, 4 ], [ 7, 8, 9 ] ],0.001);
+        });
+    });        
 
-
+    describe('Test 3', function () {
+        it('Should properly compute [[[1,2,3],[4,5,6],[7,8,9]],[[1,1,1],[1,2,3],[3,2,1]]', function () {
+            var rsig = kinetics.rotateSignal([[1,2,3],[4,5,6],[7,8,9]],[[1,1,1],[1,2,3],[3,2,1]]);
+            check(rsig,[ [ -1.9841106485555495, 3.152624170248373, -0.35251351102366546 ],[ -7.120371907142659, 3.6610482040337815, -3.591243510500872 ],[ -11.096704697261131, -7.550239355734955, -3.722503261636413 ] ],0.001);
+        });
+    });        
+    
+});
 
 
 
