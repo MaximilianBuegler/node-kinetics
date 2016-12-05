@@ -1,0 +1,30 @@
+{
+  "name": "kinetics",
+  "version": "0.0.1",
+  "description": "Node.js package for transforming accelerometer and gyroscope data",
+  "license": "MIT",
+  "homepage": "https://github.com/MaximilianBuegler/node-kinetics",
+  "repository": "MaximilianBuegler/node-kinetics",
+  "contributors": [
+    "Maximilian Buegler <max@maxbuegler.eu> (http://www.maxbuegler.eu/)"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "kinetics.js",
+    "src",
+    "test"
+  ],
+  "keywords": [
+    "kinetics",
+    "accelerometer",
+    "rotation matrix",
+    "gyroscope"
+  ],
+  "dependencies": {
+    "linear-algebra": "^3.1.3"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
