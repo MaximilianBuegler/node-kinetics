@@ -30,7 +30,7 @@ returns: [ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ]
     rot = kinetics.composeRotation(attitude[0],attitude[1],attitude[2]);
     console.log(rot);
     
-returns [ [ 0, 0, 1 ], [ 0, 1, 0 ], [ -1, 0, 0 ] ]
+returns: [ [ 0, 0, 1 ], [ 0, 1, 0 ], [ -1, 0, 0 ] ]
 
     var accelerometerData=[ [ 1, 2, 3], [ 4, 5, 6 ], [ 7, 8, 9 ] ];
     var attitudeData=[ [ Math.PI/2, 0, 0 ], [ 0, Math.PI/2, 0 ], [ 0, 0, Math.PI/2 ] ];
