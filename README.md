@@ -16,13 +16,22 @@ Node.js package for transforming accelerometer and gyroscope data
     npm install kinetics --save
     
 # Usage
-    var kinetics = require('../');
+    var kinetics = require('kinetics');
     
     var rot = kinetics.composeRotation(0,0,0);
+    console.log(rot);
     
-    var vert = kinetics.extractVerticalComponent([[1,2,3],[4,5,6],[7,8,9]],[[Math.PI/2,0,0],[0,Math.PI/2,0],[0,0,Math.PI/2]]);
+    //returns: [ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ]
+
+    var vert = kinetics.extractVerticalComponent([[1,2,3],[4,5,6],[7,8,9]],[[Math.PI/2,0,0],[0,Math.PI/2,0],[0,0,Math.PI/2]]);    
+    console.log(vert);
     
+    //returns: [ -2, 4, 9 ]
+
     var rsig = kinetics.rotateSignal([[1,2,3],[4,5,6],[7,8,9]],[[Math.PI/2,0,0],[0,Math.PI/2,0],[0,0,Math.PI/2]]);
+    console.log(rsig);
+    
+    //returns: [ [ 1, 3, -2 ], [ -6, 5, 4 ], [ 7, 8, 9 ] ]
     
 # Test
     npm test
