@@ -1,6 +1,6 @@
 {
   "name": "kinetics",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Node.js package for transforming accelerometer and gyroscope data",
   "license": "MIT",
   "homepage": "https://github.com/MaximilianBuegler/node-kinetics",
