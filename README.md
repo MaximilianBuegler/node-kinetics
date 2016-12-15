@@ -18,17 +18,29 @@ Node.js package for transforming accelerometer and gyroscope data
 # Usage
     var kinetics = require('kinetics');
     
-    var rot = kinetics.composeRotation(0,0,0);
+    var attitude=[ 0, 0, 0 ];
+    
+    var rot = kinetics.composeRotation(attitude[0],attitude[1],attitude[2]);
     console.log(rot);
     
     //returns: [ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ]
+    
+    attitude=[ 0, Math.PI/2, 0 ];
+    
+    rot = kinetics.composeRotation(attitude[0],attitude[1],attitude[2]);
+    console.log(rot);
+    
+    //returns [ [ 0, 0, 1 ], [ 0, 1, 0 ], [ -1, 0, 0 ] ]
 
-    var vert = kinetics.extractVerticalComponent([[1,2,3],[4,5,6],[7,8,9]],[[Math.PI/2,0,0],[0,Math.PI/2,0],[0,0,Math.PI/2]]);    
+    var accelerometerData=[ [ 1, 2, 3], [ 4, 5, 6 ], [ 7, 8, 9 ] ];
+    var attitudeData=[ [ Math.PI/2, 0, 0 ], [ 0, Math.PI/2, 0 ], [ 0, 0, Math.PI/2 ] ];
+    
+    var vert = kinetics.extractVerticalComponent(accelerometerData,attitudeData);    
     console.log(vert);
     
     //returns: [ -2, 4, 9 ]
 
-    var rsig = kinetics.rotateSignal([[1,2,3],[4,5,6],[7,8,9]],[[Math.PI/2,0,0],[0,Math.PI/2,0],[0,0,Math.PI/2]]);
+    var rsig = kinetics.rotateSignal(accelerometerData,attitudeData);
     console.log(rsig);
     
     //returns: [ [ 1, 3, -2 ], [ -6, 5, 4 ], [ 7, 8, 9 ] ]
