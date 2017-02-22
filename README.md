@@ -1,6 +1,11 @@
 # node-kinetics
 Node.js package for transforming accelerometer and gyroscope data
 
+# Build status
+
+[![Build Status](https://travis-ci.org/MaximilianBuegler/node-kinetics.svg?branch=master)](https://travis-ci.org/MaximilianBuegler/node-kinetics)
+[![Coverage Status](https://coveralls.io/repos/github/MaximilianBuegler/node-kinetics/badge.svg?branch=master)](https://coveralls.io/github/MaximilianBuegler/node-kinetics?branch=master)
+
 # Notes
     Assumes all input data to be 2D arrays
     
